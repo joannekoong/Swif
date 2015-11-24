@@ -13,6 +13,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
 
     var webView: WKWebView!
     var progressView: UIProgressView!
+    var websites = ["apple.com", "reddit.com"]
     
     override func loadView() {
         webView = WKWebView()
@@ -23,7 +24,7 @@ class ViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let url = NSURL(string: "https://www.reddit.com")!
+        let url = NSURL(string: "https://" + websites[0])!
         webView.loadRequest(NSURLRequest(URL: url))
         webView.allowsBackForwardNavigationGestures = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .Plain, target: self, action: "openTapped")
@@ -51,8 +52,9 @@ class ViewController: UIViewController, WKNavigationDelegate {
     }
     func openTapped() {
         let ac = UIAlertController(title: "Open page...", message: nil, preferredStyle: .ActionSheet)
-        ac.addAction(UIAlertAction(title: "apple.com", style: .Default, handler: openPage))
-        ac.addAction(UIAlertAction(title: "reddit.com", style: .Default, handler: openPage))
+        for website in websites {
+            ac.addAction(UIAlertAction(title: website, style: .Default, handler: openPage))
+        }
         ac.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         presentViewController(ac, animated: true, completion: nil)
         
@@ -67,6 +69,19 @@ class ViewController: UIViewController, WKNavigationDelegate {
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
         title = webView.title
         
+    }
+    func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
+        let url = navigationAction.request.URL
+        
+        if let host = url!.host {
+            for website in websites {
+                if host.rangeOfString(website) != nil {
+                    decisionHandler(.Allow)
+                    return
+                }
+            }
+        }
+        decisionHandler(.Cancel)
     }
     
 //    func refreshTapped() {
