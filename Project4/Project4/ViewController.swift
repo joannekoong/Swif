@@ -12,6 +12,7 @@ import WebKit
 class ViewController: UIViewController, WKNavigationDelegate {
 
     var webView: WKWebView!
+    var progressView: UIProgressView!
     
     override func loadView() {
         webView = WKWebView()
@@ -27,9 +28,27 @@ class ViewController: UIViewController, WKNavigationDelegate {
         webView.allowsBackForwardNavigationGestures = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open", style: .Plain, target: self, action: "openTapped")
         
+        progressView = UIProgressView(progressViewStyle: .Default)
+        progressView.sizeToFit()
+        let progressButton = UIBarButtonItem(customView: progressView)
+        webView.addObserver(self, forKeyPath: "estimatedProgress", options: .New, context: nil)
+        
+        let spacer = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+        let refresh = UIBarButtonItem(barButtonSystemItem: .Refresh, target: webView, action: "reload")
+
+        //        let refresh = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "refreshTapped")
+        
+        toolbarItems = [progressButton, spacer, refresh]
+        navigationController?.toolbarHidden = false
+        
         
     }
     
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if keyPath == "estimatedProgress" {
+            progressView.progress = Float(webView.estimatedProgress)
+        }
+    }
     func openTapped() {
         let ac = UIAlertController(title: "Open page...", message: nil, preferredStyle: .ActionSheet)
         ac.addAction(UIAlertAction(title: "apple.com", style: .Default, handler: openPage))
@@ -44,6 +63,15 @@ class ViewController: UIViewController, WKNavigationDelegate {
         webView.loadRequest(NSURLRequest(URL: url))
         
     }
+    
+    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
+        title = webView.title
+        
+    }
+    
+//    func refreshTapped() {
+//        webView.reload()
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
