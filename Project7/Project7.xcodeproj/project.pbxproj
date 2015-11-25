@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		969B82711C0668CA009B23B5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969B82701C0668CA009B23B5 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
 		96A3BDB81C056AFB00E0B8D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A3BDB71C056AFB00E0B8D3 /* AppDelegate.swift */; };
 		96A3BDBA1C056AFB00E0B8D3 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A3BDB91C056AFB00E0B8D3 /* MasterViewController.swift */; };
 		96A3BDBC1C056AFB00E0B8D3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A3BDBB1C056AFB00E0B8D3 /* DetailViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		969B82701C0668CA009B23B5 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		96A3BDB41C056AFB00E0B8D3 /* Project7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96A3BDB71C056AFB00E0B8D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96A3BDB91C056AFB00E0B8D3 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				96A3BDBB1C056AFB00E0B8D3 /* DetailViewController.swift */,
 				96A3BDBD1C056AFB00E0B8D3 /* Main.storyboard */,
 				96A3BDC01C056AFC00E0B8D3 /* Assets.xcassets */,
+				969B82701C0668CA009B23B5 /* SwiftyJSON.swift */,
 				96A3BDC21C056AFC00E0B8D3 /* LaunchScreen.storyboard */,
 				96A3BDC51C056AFC00E0B8D3 /* Info.plist */,
 			);
@@ -140,6 +143,7 @@
 				96A3BDBC1C056AFB00E0B8D3 /* DetailViewController.swift in Sources */,
 				96A3BDBA1C056AFB00E0B8D3 /* MasterViewController.swift in Sources */,
 				96A3BDB81C056AFB00E0B8D3 /* AppDelegate.swift in Sources */,
+				969B82711C0668CA009B23B5 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +293,7 @@
 				96A3BDCA1C056AFC00E0B8D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
