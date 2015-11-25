@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tCK-P6-Bnx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,6 +20,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sS-8X-FRw">
                                 <rect key="frame" x="200" y="144" width="200" height="100"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0sS-8X-FRw" secondAttribute="height" multiplier="2:1" id="FDz-ez-Iq7"/>
+                                </constraints>
                                 <state key="normal" image="us"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ryZ-Sb-MvD"/>
@@ -27,6 +31,9 @@
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XkX-N6-rLf">
                                 <rect key="frame" x="200" y="274" width="200" height="100"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XkX-N6-rLf" secondAttribute="height" multiplier="2:1" id="fAv-2h-ixV"/>
+                                </constraints>
                                 <state key="normal" image="us"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9F0-TX-15j"/>
@@ -35,6 +42,9 @@
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qeq-LD-8o1">
                                 <rect key="frame" x="200" y="404" width="200" height="100"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Qeq-LD-8o1" secondAttribute="height" multiplier="2:1" id="nYi-c9-xPp"/>
+                                </constraints>
                                 <state key="normal" image="us"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E6D-9R-5cN"/>
@@ -45,11 +55,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XkX-N6-rLf" firstAttribute="trailing" secondItem="0sS-8X-FRw" secondAttribute="trailing" id="45u-3w-DQh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Qeq-LD-8o1" secondAttribute="bottom" constant="20" id="Lc7-sO-T2Y"/>
                             <constraint firstItem="XkX-N6-rLf" firstAttribute="top" secondItem="0sS-8X-FRw" secondAttribute="bottom" constant="30" id="SSo-sB-CiM"/>
                             <constraint firstItem="Qeq-LD-8o1" firstAttribute="centerX" secondItem="XkX-N6-rLf" secondAttribute="centerX" id="a97-YQ-lGJ"/>
                             <constraint firstItem="Qeq-LD-8o1" firstAttribute="top" secondItem="XkX-N6-rLf" secondAttribute="bottom" constant="30" id="ct4-XP-ETA"/>
                             <constraint firstItem="0sS-8X-FRw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="f63-ZE-rEb"/>
+                            <constraint firstItem="Qeq-LD-8o1" firstAttribute="height" secondItem="XkX-N6-rLf" secondAttribute="height" id="vj5-xu-f1s"/>
                             <constraint firstItem="0sS-8X-FRw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wyp-Qe-9nB"/>
+                            <constraint firstItem="XkX-N6-rLf" firstAttribute="height" secondItem="0sS-8X-FRw" secondAttribute="height" id="xln-IN-57f"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WKg-12-q3d"/>
