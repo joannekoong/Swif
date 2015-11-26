@@ -8,8 +8,30 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
+        nameTextField.resignFirstResponder()
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .PhotoLibrary
+        imagePickerController.delegate = self
+        presentViewController(imagePickerController, animated: true, completion: nil)
+    
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        photoImageView.image = selectedImage
+        
+        dismissViewControllerAnimated(true, completion: nil) 
+    }
+    
+    @IBOutlet weak var photoImageView: UIImageView!
     @IBAction func setDefaultLabelText(sender: UIButton) {
     
     }
