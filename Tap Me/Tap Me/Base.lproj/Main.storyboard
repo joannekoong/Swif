@@ -44,6 +44,9 @@
                                     <constraint firstAttribute="height" constant="113" id="kmc-MU-Le2"/>
                                 </constraints>
                                 <state key="normal" title="Tap Me! "/>
+                                <connections>
+                                    <action selector="buttonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="5AM-ZD-IFm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -57,6 +60,10 @@
                             <constraint firstItem="Hda-Tu-B4l" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="rDH-cG-g8B"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="00T-Bi-QCs" id="gsT-gQ-kYk"/>
+                        <outlet property="timerLabel" destination="Hda-Tu-B4l" id="cTt-8g-7mi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,7 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var timerLabel: UILabel!
+    
+ 
+    @IBAction func buttonPressed() {
+        NSLog("Button pressed!!!!") 
+    }
+    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
