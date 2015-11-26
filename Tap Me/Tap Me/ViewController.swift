@@ -13,9 +13,11 @@ class ViewController: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var timerLabel: UILabel!
     
+    var count = 0
  
     @IBAction func buttonPressed() {
-        NSLog("Button pressed!!!!") 
+        count++
+        scoreLabel.text = "Score \n\(count)" 
     }
     
   
