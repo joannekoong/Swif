@@ -19,6 +19,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     }
     
+    
+    @IBOutlet weak var ratingControl: RatingControl!
+    
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -32,9 +35,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     }
     
     @IBOutlet weak var photoImageView: UIImageView!
-    @IBAction func setDefaultLabelText(sender: UIButton) {
-    
-    }
+
     @IBOutlet weak var mealNameLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
     override func viewDidLoad() {
