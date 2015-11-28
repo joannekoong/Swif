@@ -41,6 +41,9 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dwp-Wr-qNl" secondAttribute="height" multiplier="1:1" id="uSt-Dp-FiG"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="yKe-7A-2iF" appends="YES" id="060-W3-TdX"/>
+                                        </connections>
                                     </imageView>
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="xVU-gL-mr4" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
                                         <rect key="frame" x="160" y="407" width="240" height="44"/>
@@ -71,9 +74,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="xMq-jx-vJB">
+                <tapGestureRecognizer id="yKe-7A-2iF">
                     <connections>
-                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="Byu-fY-GTt"/>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="cbG-JJ-NDB"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

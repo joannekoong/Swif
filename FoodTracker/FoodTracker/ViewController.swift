@@ -16,8 +16,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         imagePickerController.sourceType = .PhotoLibrary
         imagePickerController.delegate = self
         presentViewController(imagePickerController, animated: true, completion: nil)
-    
     }
+
     
     
     @IBOutlet weak var ratingControl: RatingControl!
@@ -54,10 +54,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         mealNameLabel.text = textField.text
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 
 }
